@@ -49,14 +49,18 @@
 
   function calculateNote() {
     var noteValue = Number(noteNumElement.value)
-    var noteName = note_array[noteValue % 12]
-    var octave = -1
-    while (noteValue >= 12) {
-      octave++
-      console.log(octave)
-      noteValue = noteValue - 12
+    if (noteValue < 0 || noteValue > 127) {
+      noteNameElement.value = '--'
+    } else {
+      var noteName = note_array[noteValue % 12]
+      var octave = -1
+      while (noteValue >= 12) {
+        octave++
+        console.log(octave)
+        noteValue = noteValue - 12
+      }
+      noteNameElement.value = noteName + octave
     }
-    noteNameElement.value = noteName + octave
   }
 
   function calculateNoteNumber() {
