@@ -24,6 +24,26 @@
 <script type="text/javascript" charset="utf-8">
   var note_array = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B']
 
+  var note_chart = {
+    'C' : 0,
+    'C#' : 1,
+    'Db' : 1,
+    'D' : 2,
+    'D#' : 3,
+    'Eb' : 3,
+    'E' : 4,
+    'F' : 5,
+    'F#' : 6,
+    'Gb' : 6,
+    'G' : 7,
+    'G#' : 8,
+    'Ab' : 8,
+    'A' : 9,
+    'A#' : 10,
+    'Bb' : 10,
+    'B' : 11
+  }
+
   var noteNameElement = document.getElementById('note_name')
   var noteNumElement = document.getElementById('note_num')
 
@@ -45,7 +65,7 @@
     var octave
 
     // check if input is valid
-    if (note_array.indexOf(noteNameElement.value[0]) >= 0) {
+    if (note_chart[noteNameElement.value[0]] >= 0) {
       console.log('note is valid')
 
       // check for accidentals
@@ -53,10 +73,12 @@
         console.log('there is an accidental')
         noteName = noteNameElement.value.slice(0,2)
         console.log('note name is ' + noteName)
-        noteValue = note_array.indexOf(noteName)
+        noteValue = note_chart[noteName]
+        console.log('note value is ' + noteValue)
       } else {
         noteName = noteNameElement.value[0]
-        noteValue = note_array.indexOf(noteName)
+        noteValue = note_chart[noteName]
+        console.log('note value is ' + noteValue)
       }
 
       // get octave
