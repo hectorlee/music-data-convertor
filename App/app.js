@@ -10,16 +10,13 @@ var submenu = new gui.Menu();
 submenu.append(new gui.MenuItem({ 
   label: "MIDI Note Calculator",
   click: function() {
-    win = gui.Window.get()
-    console.log(win)
+    window.open('index.html')
   }
   }));
 submenu.append(new gui.MenuItem({ label: 'Delay Calculator' }));
 submenu.append(new gui.MenuItem({ label: 'Frequency Counter' }));
 item.submenu = submenu;
 nativeMenuBar.append(item)
-
-
 
 win.menu = nativeMenuBar;
 
@@ -52,8 +49,12 @@ var noteNumElement = document.getElementById('note_num')
 
 function calculateNote() {
   var noteValue = Number(noteNumElement.value)
-  if (noteValue < 0 || noteValue > 127) {
-    noteNameElement.value = '--'
+  if (noteValue > 127) {
+    noteNameElement.value = 'G9'
+    noteNumElement.value = 127
+  } else if (noteValue < 0) {
+    noteNameElement.value = 'C0'
+    noteNumElement.value = 0
   } else {
     var noteName = note_array[noteValue % 12]
     var octave = -1

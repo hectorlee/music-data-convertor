@@ -1,9 +1,1 @@
-{
-  "name": "MusicTools",
-  "main": "index.html",
-  "version": "0.1.0",
-  "window": {
-    "toolbar": true,
-    "width": 400
-  }
-}
+{"name":"MusicTools","main":"index.html","version":"0.1.0","window":{"toolbar":true,"width":400}}
