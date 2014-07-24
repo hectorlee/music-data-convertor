@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Data Convertor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <style>
+    @import url('http://fonts.googleapis.com/css?family=Squada+One|Syncopate');
+    html, body {font-family: 'Squada One', sans-serif; margin: 0; padding: 0; font-size:2em;}
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0; }
+    input {font-family: 'Squada One', sans-serif; font-size: 4rem; border: 0; color: #f15b47; outline: none; width:60%; text-align: center }
+    ul {list-style-type: none; text-align: center; margin: 0; padding: 0; }
+    li {display: block; width:100%; text-align: center;}
+  </style>
+
+</head>
+
+<body>
+<li>note number</li>
+<li><input type="number" id="note_num" value="60" placeholder="60" onchange="calculateNote()"></li>
+<li>note name</li>
+<li><input type="text" id="note_name" value="C4" placeholder="C4" onchange="calculateNoteNumber()"></li>
+
+<script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
